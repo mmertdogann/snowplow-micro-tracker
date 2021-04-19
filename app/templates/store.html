@@ -1,0 +1,61 @@
+{% extends "layout.html" %} {% block body %}
+
+
+<div class="container table-responsive">
+    <h1 class="mt-5">Item Store</h1>
+  <form action="/basket" method="post">
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationName">Name</label>
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          id="validationName"
+          placeholder="Macbook Air"
+          required
+          autofocus
+          autocomplete="off"
+        />
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationPrice">Price</label>
+        <input
+          type="text"
+          name="price"
+          class="form-control"
+          id="validationPrice"
+          placeholder="1000"
+          required
+          autofocus
+          autocomplete="off"
+        />
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationQuantity">Quantity</label>
+        <input
+          type="text"
+          name="quantity"
+          class="form-control"
+          id="validationQuantity"
+          placeholder="1"
+          aria-describedby="inputGroupPrepend2"
+          required
+          autofocus
+          autocomplete="off"
+        />
+      </div>
+      <div class="col-md-4 mb-3">
+        <select name="category">
+            <option disabled selected value="">Category</option>
+            {% for category in categories %}
+            <option value="{{ category }}">{{ category }}</option>
+            {% endfor %}
+          </select>
+      </div>
+    <input class="btn btn-primary" type="submit" value="Add to basket" />
+    <a class="btn btn-primary" href="/basket" role="button">Basket</a>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %} {% block body %}
+
+<main role="main" class="container extra-bottom">
+  <h1 class="mt-5">Basket</h1>
+</main>
+
+<div class="container table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Category</th>
+        <th>Total: {{basket.total}}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for item in basket.items %}
+      <tr>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.quantity * item.price}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <a class="btn btn-primary" href="/store" role="button">Store</a>
+  <a class="btn btn-primary" href="/purchase" role="button">Purchase</a>
+</div>
+
+{% endblock %}
