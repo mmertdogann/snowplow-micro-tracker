@@ -33,7 +33,7 @@ pip install -r requirements.txt
 
 > For the installation of the [Snowplow Micro](https://github.com/snowplow-incubator/snowplow-micro/). There are set up instructions for Micro in the readme.
 
-After installation of the Snowplow Micro, open a terminal and type the command below
+After installation of the Snowplow Micro, open a terminal and type the command below:
 
 ```bash
 docker run --mount type=bind,source=$(pwd)/example,destination=/config -p 9090:9090 snowplow/snowplow-micro --collector-config /config/micro.conf --iglu /config/iglu.j\son
